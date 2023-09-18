@@ -82,6 +82,7 @@ class _ActivityScreenState extends State<ActivityScreen>
         title: GestureDetector(
           onTap: _onTitleTap,
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('All Activity'),
@@ -92,7 +93,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                   FontAwesomeIcons.chevronDown,
                   size: Sizes.size14,
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -168,33 +169,34 @@ class _ActivityScreenState extends State<ActivityScreen>
                     ),
                     title: RichText(
                       text: TextSpan(
-                          text: "Account update:",
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
+                        text: "Account update:",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                        children: [
+                          const TextSpan(
+                            text: ' Upload longer videos',
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
-                          children: [
-                            const TextSpan(
-                              text: ' Upload longer videos',
-                              style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                              ),
+                          TextSpan(
+                            text: ' $notification',
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              color: Colors.grey.shade500,
                             ),
-                            TextSpan(
-                              text: ' $notification',
-                              style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                color: Colors.grey.shade500,
-                              ),
-                            ),
-                          ]),
+                          ),
+                        ],
+                      ),
                     ),
                     trailing: const FaIcon(
                       FontAwesomeIcons.chevronRight,
                       size: Sizes.size16,
                     ),
                   ),
-                )
+                ),
             ],
           ),
           if (_showBarrier)
