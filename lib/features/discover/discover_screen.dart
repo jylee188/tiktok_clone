@@ -46,12 +46,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           elevation: 1,
-          title: CupertinoSearchTextField(
-            onChanged: _onSearchChanged,
-            onSubmitted: _onSearchSubmitted,
-            prefixIcon: const Icon(
-              CupertinoIcons.search,
-              color: Colors.black,
+          title: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: Breakpoints.sm,
+            ),
+            child: CupertinoSearchTextField(
+              onChanged: _onSearchChanged,
+              onSubmitted: _onSearchSubmitted,
+              prefixIcon: const Icon(
+                CupertinoIcons.search,
+                color: Colors.black,
+              ),
             ),
           ),
           bottom: TabBar(
