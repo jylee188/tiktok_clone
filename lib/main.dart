@@ -13,6 +13,8 @@ void main() async {
     ],
   );
 
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+
   runApp(const TikTokApp());
 }
 
@@ -43,7 +45,7 @@ class TikTokApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SignUpScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }
